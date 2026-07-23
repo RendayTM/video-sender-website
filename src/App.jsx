@@ -61,13 +61,25 @@ try {
 
   console.log(data);
 
-  setName("");
-  setUrl("");
+  if (data.success) {
 
-  loadQueue();
+    setMessage(data.message);
+    setMessageColor("green");
+
+    setName("");
+    setUrl("");
+
+    loadQueue();
+
+  } else {
+
+    setMessage(data.message);
+    setMessageColor("red");
+  }
 
 } catch (error) {
-  console.error("Error submitting video:", error);
+    setMessage("Server unavailable.");
+    setMessageColor("red");
 }
 
 }
