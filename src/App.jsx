@@ -7,7 +7,7 @@ function App() {
 
   async function loadQueue() {
     try {
-      const response = await fetch("http://127.0.0.1:8000/queue");
+      const response = await fetch("https://video-sender-backend-1.onrender.com/queue");
       const data = await response.json();
       setQueue(data);
     } catch (error) {
@@ -19,7 +19,7 @@ function App() {
     if (!url.trim()) return;
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/queue", {
+      const response = await fetch("https://video-sender-backend-1.onrender.com/queue", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
