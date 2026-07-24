@@ -61,7 +61,6 @@ try {
 
   console.log(data);
 
-  setName("");
   setUrl("");
 
   loadQueue();
