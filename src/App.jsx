@@ -150,6 +150,7 @@ return (
           <strong>
             {video.name}
           </strong>
+          <p>Status: {video.status}</p>
 
           {" "}submitted{" "}
 
