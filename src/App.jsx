@@ -72,6 +72,26 @@ try {
 
 }
 
+
+function getStatus(status) {
+  switch (status) {
+    case "queued":
+      return "🟡 Waiting";
+
+    case "playing":
+      return "▶️ Playing";
+
+    case "finished":
+      return "✅ Finished";
+
+    case "failed":
+      return "❌ Could not load";
+
+    default:
+      return status;
+  }
+}
+
 useEffect(() => {
 loadQueue();
 checkPlayerStatus();
@@ -150,7 +170,7 @@ return (
           <strong>
             {video.name}
           </strong>
-          <p>Status: {video.status}</p>
+          <p>{getStatus(video.status)}</p>
 
           {" "}submitted{" "}
 
